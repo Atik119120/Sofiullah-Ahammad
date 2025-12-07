@@ -1,400 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Sofiullah Ahammad — Photographer · Cinematographer</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Sofiullah Ahammad (Atik Ahmed) — Black-classic cinematic photography. Portrait, street, minimal & product. Based in Rajshahi, Bangladesh." />
-  <meta name="theme-color" content="#08070a">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sofiullah Ahammad — Cinematic Visual Artist</title>
+  <meta name="description" content="Official website of Sofiullah Ahammad — Bangladeshi photographer, cinematographer and visual artist creating black‑classic cinematic frames." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Sofiullah Ahammad — Photographer & Cinematographer">
-  <meta property="og:description" content="Black-classic cinematic photography — portrait, street, minimal & product. Based in Rajshahi, Bangladesh.">
-  <meta property="og:image" content="https://github.com/Atik119120/Sofiullah-Ahmmad/blob/main/537405745_1227380375810727_5014246075421698846_n.jpg?raw=true">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Schema.org Person (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Sofiullah Ahammad",
-    "alternateName":"Atik Ahmed",
-    "jobTitle":"Photographer; Cinematographer; Motion Designer; Web Developer",
-    "image":"https://github.com/Atik119120/Sofiullah-Ahmmad/blob/main/537405745_1227380375810727_5014246075421698846_n.jpg?raw=true",
-    "description":"Sofiullah Ahammad (professionally known as Atik Ahmed) is a Bangladeshi photographer and cinematographer known for a black-classic cinematic style across portrait, street, minimal and product photography.",
-    "email":"mailto:sofiullahahammed6@gmail.com",
-    "url":"https://sofiullahahammad.bio.link",
-    "sameAs":[
-      "https://www.facebook.com/SofiullahAahmmad",
-      "https://www.instagram.com/sofiullahahammad/",
-      "https://www.linkedin.com/in/sofiullah-ahammad/",
-      "https://www.imdb.com/name/nm17938099/",
-      "https://wikialpha.co/wiki/Sofiullah_Ahammad",
-      "https://www.youtube.com/@sofiullahahammad",
-      "https://open.spotify.com/user/31p6xlt4hae3iwvdsgstoeroun6a",
-      "https://www.tiktok.com/sofiullahahammad",
-      "https://www.pinterest.com/sofiullahahammed/",
-      "https://sofiullahahammad.bio.link"
-    ]
-  }
-  </script>
-
-  <!-- Fonts & icons & lightbox -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#070608;
-      --panel:#0b0b0c;
-      --muted:#9aa0a6;
-      --ink:#f5f7f8;
-      --accent:#d7d2ca;
-      --radius:14px;
-      --maxw:1200px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#050507 0%, #0a0a0b 60%);color:var(--ink);font-family:Poppins, system-ui, -apple-system;}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-
-    /* subtle film grain */
-    .grain {
-      pointer-events:none;
-      position:fixed;inset:0;z-index:9999;mix-blend-mode:soft-light;opacity:.06;background-image:
-      radial-gradient(rgba(255,255,255,.02) 1px, transparent 1px);
-      background-size:3px 3px;
+    :root {
+      --ink:#0f0f0f;
+      --muted:#666;
+      --warm:#f5f1e9;
+      --glass-bg:rgba(255,255,255,0.46);
+      --glass-border:rgba(0,0,0,0.05);
+      --max:1180px;
     }
 
-    /* layout */
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 20px 80px}
-    header.site-nav{position:fixed;left:0;right:0;top:18px;display:flex;justify-content:center;z-index:60;pointer-events:none}
-    .nav{width:calc(var(--maxw) - 40px);display:flex;align-items:center;justify-content:space-between;pointer-events:auto}
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand .logo{width:46px;height:46px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.04)}
-    .brand .logo img{width:100%;height:100%;object-fit:cover}
-    .brand .name{font-family:"Playfair Display", serif;font-weight:700;letter-spacing:.18em;color:var(--ink);font-size:14px}
-    nav.links{display:flex;gap:14px;align-items:center}
-    nav.links a{font-size:13px;color:var(--muted);padding:8px 10px;border-radius:10px}
-    nav.links a:hover{color:var(--ink);background:rgba(255,255,255,.02)}
-
-    /* HERO */
-    .hero{
-      margin-top:72px;
-      position:relative;overflow:hidden;border-radius:12px;min-height:64vh;display:flex;
-      align-items:center;justify-content:center;background:#060506;
-      box-shadow:0 30px 80px rgba(0,0,0,.7);
-      border:1px solid rgba(255,255,255,.03)
-    }
-    .hero .bg {
-      position:absolute;inset:0;z-index:0;display:block;overflow:hidden;
-    }
-    .hero .bg .slide{
-      position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;
-      opacity:0;transform:scale(1.03);transition:opacity 1.2s ease, transform 8s ease;
-      filter:contrast(.96) saturate(.98) brightness(.86);
-    }
-    .hero .bg .slide.active{opacity:1;transform:scale(1.01)}
-    .hero .overlay{
-      position:absolute;inset:0;background:linear-gradient(180deg, rgba(3,3,3,.18), rgba(3,3,3,.48) 60%);z-index:1;
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {
+      font-family:"Inter", sans-serif;
+      background:#ffffff;
+      color:var(--ink);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
     }
 
-    /* centered signature / title */
-    .hero-inner{
-      position:relative;z-index:2;text-align:center;padding:48px 28px;max-width:980px;margin:0 auto;color:var(--ink)
+    /* ================= NAVBAR ================= */
+    header {
+      position:fixed;
+      top:22px;
+      left:50%;
+      transform:translateX(-50%);
+      width:calc(var(--max) + 60px);
+      z-index:1000;
     }
-    .hero-title{font-family:"Playfair Display",serif;font-weight:700;font-size:44px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 6px}
-    .hero-sub{font-size:12px;color:var(--muted);letter-spacing:.18em;margin-bottom:18px}
-    .hero-quote{font-family:"Playfair Display",serif;color:var(--accent);font-size:14px;opacity:.95;margin-top:6px}
+    .nav {
+      background:var(--glass-bg);
+      backdrop-filter:blur(14px);
+      border-radius:14px;
+      border:1px solid var(--glass-border);
+      padding:14px 26px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow:0 8px 30px rgba(0,0,0,0.06);
+    }
+    .nav-logo {
+      width:52px;
+      height:52px;
+    }
+    .nav-logo img {
+      width:100%;height:100%;object-fit:contain;
+    }
+    .nav-links a {
+      margin-left:26px;
+      font-size:15px;
+      text-decoration:none;
+      color:var(--muted);
+      letter-spacing:0.08em;
+    }
+    .nav-links a:hover {color:var(--ink);} 
 
-    .hero-ctas{margin-top:20px;display:flex;gap:12px;justify-content:center}
-    .btn{padding:10px 18px;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.12em;border:1px solid rgba(255,255,255,.04);background:transparent;color:var(--ink)}
-    .btn.primary{background:rgba(255,255,255,.06);border:none}
+    /* ================= HERO ================= */
+    .hero {
+      height:100vh;
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
+      border-radius:16px;
+      margin-top:120px;
+      overflow:hidden;
+      position:relative;
+      background:url('https://github.com/Atik119120/Sofiullah-Ahammad/blob/main/Picsart_25-12-06_21-37-47-797.jpg?raw=true') center/cover no-repeat;
+    }
+    .fade {
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 25%,
+        rgba(255,255,255,0.6) 70%,
+        rgba(255,255,255,1) 100%
+      );
+    }
+    .hero-content {
+      position:absolute;
+      bottom:120px;
+      left:50%;
+      transform:translateX(-50%);
+      text-align:center;
+      z-index:10;
+    }
+    .hero-content h1 {
+      font-family:"Playfair Display", serif;
+      font-size:48px;
+      letter-spacing:0.22em;
+    }
+    .hero-content p {
+      color:var(--muted);
+      letter-spacing:0.18em;
+      margin-top:8px;
+    }
 
-    /* minimal decorative sides (like examples) */
-    .side-menu{position:absolute;top:40px;left:40px;z-index:3;color:var(--muted);font-size:13px;letter-spacing:.18em}
-    .side-menu.right{left:auto;right:40px;text-align:right}
+    /* PAGE SECTIONS – Page-like blocks */
+    section.page-block {
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:120px 20px;
+      min-height:100vh;
+      position:relative;
+    }
+    .page-block.fade-enter {
+      opacity:0;
+      transform:translateY(60px);
+      transition:0.8s ease;
+    }
+    .page-block.visible {
+      opacity:1;
+      transform:none;
+    }
 
-    /* quote block below hero */
-    .hero-quote-block{background:transparent;padding:30px 0 10px;text-align:center;font-size:13px;color:var(--muted);max-width:900px;margin:18px auto 0}
+    /* ABOUT PAGE */
+    .about-wrap {
+      display:flex;
+      flex-wrap:wrap;
+      gap:40px;
+      align-items:flex-start;
+    }
+    .pfp {
+      width:300px;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid var(--glass-border);
+    }
+    .pfp img {width:100%;display:block;}
+    .about-text {flex:1;font-size:17px;line-height:1.75;}
+    .about-text p {margin-bottom:20px;}
 
-    /* main content */
-    .content{margin-top:34px;display:grid;grid-template-columns:1fr 340px;gap:28px}
-    @media(max-width:980px){.content{grid-template-columns:1fr}}
-    .about{background:linear-gradient(180deg, rgba(255,255,255,.01), transparent);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,.02)}
-    .about h2{font-family:"Playfair Display";margin:0 0 6px;font-size:20px;letter-spacing:.18em;text-transform:uppercase}
-    .about p{color:var(--muted);line-height:1.7}
+    /* SOCIAL ICON BLOCK */
+    .social-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:14px;
+      margin-top:20px;
+    }
+    .social-item {
+      text-decoration:none;
+      padding:12px 14px;
+      background:white;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,0.08);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:15px;
+      color:var(--ink);
+    }
+    .social-item:hover {border-color:var(--ink);} 
 
-    .profile-card{padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,.03);background:rgba(255,255,255,.01);text-align:center}
-    .profile-card img{width:100%;height:auto;border-radius:8px;display:block;object-fit:cover}
-    .profile-card .role{margin-top:8px;color:var(--muted);font-size:13px;letter-spacing:.12em}
+    /* WORK (GALLERY) */
+    .gallery {
+      column-count:3;
+      column-gap:20px;
+    }
+    @media(max-width:900px){.gallery{column-count:2;}}
+    @media(max-width:600px){.gallery{column-count:1;}}
 
-    /* gallery (film cinematic grid) */
-    .gallery-head{display:flex;justify-content:space-between;align-items:center;margin-top:6px;gap:12px}
-    .gallery-title{font-family:"Playfair Display";font-size:18px;letter-spacing:.18em;text-transform:uppercase}
-    .filters{display:flex;gap:8px}
-    .filters button{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid rgba(255,255,255,.03);color:var(--muted);cursor:pointer;font-weight:700}
-    .filters button.active{background:rgba(255,255,255,.06);color:var(--ink);border:none}
+    .gallery a {display:block;margin-bottom:20px;break-inside:avoid;}
+    .gallery img {
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,0.06);
+      transition:0.35s;
+    }
+    .gallery img:hover {transform:scale(1.03);} 
 
-    .masonry{column-count:3;column-gap:18px;margin-top:18px}
-    @media(max-width:1100px){.masonry{column-count:2}}
-    @media(max-width:680px){.masonry{column-count:1}}
-    .card{display:inline-block;width:100%;margin:0 0 18px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.03);background:linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.04))}
-    .card a{display:block}
-    .card img{width:100%;height:auto;display:block;transition:transform .6s ease, filter .5s}
-    .card:hover img{transform:scale(1.03);filter:brightness(1.08)}
-    .card .meta{padding:10px 12px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
-    .tag{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink);opacity:.9}
+    /* CONTACT PAGE */
+    .contact-info {
+      font-size:18px;
+      margin-top:10px;
+      line-height:1.7;
+    }
 
-    /* contact area & footer */
-    .contact{margin-top:22px;padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,.02);background:linear-gradient(180deg, rgba(255,255,255,.01), transparent)}
-    label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
-    input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.03);background:transparent;color:var(--ink)}
-    .send{margin-top:10px;padding:10px 14px;border-radius:999px;border:none;background:rgba(255,255,255,.06);font-weight:700;cursor:pointer}
-
-    footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px;padding-bottom:40px}
-    footer a{color:var(--ink);font-weight:700}
+    /* FOOTER */
+    footer {
+      margin-top:120px;
+      padding:60px 30px;
+      background:var(--warm);
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+    footer img {width:70px;margin-bottom:10px;}
+    footer h3 {
+      font-family:"Playfair Display", serif;
+      font-size:22px;
+      letter-spacing:0.14em;
+      margin-bottom:14px;
+    }
+    footer p {color:#444;margin-top:10px;font-size:14px;}
   </style>
 </head>
+
 <body>
-  <div class="grain" aria-hidden="true"></div>
 
-  <!-- NAV -->
-  <header class="site-nav">
-    <div class="nav">
-      <div class="brand">
-        <div class="logo"><img src="https://github.com/Atik119120/Sofiullah-Ahmmad/blob/main/537405745_1227380375810727_5014246075421698846_n.jpg?raw=true" alt="Sofiullah"></div>
-        <div>
-          <div class="name">SOFIULLAH AHAMMAD</div>
-          <div style="font-size:11px;color:var(--muted)">Photographer · Cinematographer</div>
-        </div>
-      </div>
-
-      <nav class="links" aria-label="Main">
-        <a href="#my-work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://sofiullahahammad.bio.link" target="_blank">Links</a>
-      </nav>
+<!-- NAVBAR -->
+<header>
+  <div class="nav">
+    <div class="nav-logo">
+      <img src="https://atikahmed.online/wp-content/uploads/2025/10/atix-logo-scaled-e1762443078127.png" />
     </div>
-  </header>
+    <nav class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#about">Bio</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="wrap">
-    <!-- HERO (Hybrid Cinematic) -->
-    <section class="hero" role="banner" aria-label="Hero">
-      <div class="bg" aria-hidden="true">
-        <div class="slide" style="background-image:url('https://github.com/Atik119120/Sofiullah-Ahmmad/blob/main/Picsart_25-12-06_21-37-47-797.jpg?raw=true')"></div>
-        <div class="slide" style="background-image:url('https://github.com/Atik119120/Sofiullah-Ahmmad/blob/main/Picsart_25-11-29_06-37-50-615.jpg?raw=true')"></div>
-        <div class="slide" style="background-image:url('https://github.com/Atik119120/Sofiullah-Ahmmad/blob/main/487867246_1120651293150303_7980669474483972819_n%20(1).jpg?raw=true')"></div>
-      </div>
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="fade"></div>
+  <div class="hero-content">
+    <h1>SOFIULLAH AHAMMAD</h1>
+    <p>Cinematic Photographer & Visual Artist</p>
+  </div>
+</section>
 
-      <div class="overlay"></div>
-
-      <div class="side-menu" aria-hidden="true">
-        <div>Home</div>
-        <div style="margin-top:12px">Portfolio</div>
-        <div style="margin-top:12px">Contact</div>
-      </div>
-      <div class="side-menu right" style="right:40px;left:auto" aria-hidden="true">
-        <div>About</div>
-        <div style="margin-top:12px">Press</div>
-      </div>
-
-      <div class="hero-inner">
-        <div style="opacity:.95"><small class="hero-sub">Available for shoots · Rajshahi, Bangladesh</small></div>
-        <h1 class="hero-title">SOFIULLAH AHAMMAD</h1>
-        <div class="hero-sub">Visual Photographer · Cinematographer</div>
-        <p class="hero-quote">Black-classic cinematic frames — portraits, street, minimal & product.</p>
-
-        <div class="hero-ctas">
-          <a class="btn primary" href="#my-work">View Portfolio</a>
-          <a class="btn" href="#contact">Book a Shoot</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- short quote / transition -->
-    <div class="hero-quote-block">
-      <em style="font-style:normal;color:var(--muted)">"I don’t chase noise — I chase feeling." — Sofiullah Ahammad</em>
+<!-- ABOUT (Page 2 feel) -->
+<section id="about" class="page-block fade-enter">
+  <div class="about-wrap">
+    <div class="pfp">
+      <img src="https://raw.githubusercontent.com/Atik119120/Sofiullah-Ahammad/main/537405745_1227380375810727_5014246075421698846_n.jpg?raw=true" />
     </div>
 
-    <!-- content columns -->
-    <div class="content" id="topContent">
-      <!-- left: about & gallery -->
-      <div>
-        <section id="about" class="about">
-          <h2>About</h2>
-          <p><strong>Sofiullah Ahammad</strong> (professionally known as Atik Ahmed) is a Bangladeshi photographer, cinematographer and motion designer based in Rajshahi. He develops a black-classic cinematic visual language — moody lighting, strong contrast and filmic composition. He founded <strong>Alokchitra</strong>, a creative community for photographers and visual storytellers.</p>
-        </section>
+    <div class="about-text">
+      <p><strong>Sofiullah Ahammad</strong> (professionally known as <strong>Atik Ahmed</strong>) is a Bangladeshi photographer, cinematographer and visual artist known for his black‑classic cinematic language — shaped through contrast, intentional lighting and emotional minimalism.</p>
 
-        <!-- gallery header -->
-        <div class="gallery-head">
-          <div>
-            <div class="gallery-title">Selected Work</div>
-            <div style="color:var(--muted);font-size:13px">Portrait · Street · Minimal · Product</div>
-          </div>
-          <div class="filters" role="tablist" aria-label="Filter images">
-            <button class="active" data-filter="all">All</button>
-            <button data-filter="portrait">Portrait</button>
-            <button data-filter="street">Street</button>
-            <button data-filter="nature">Nature</button>
-            <button data-filter="landscape">Landscape</button>
-            <button data-filter="product">Product</button>
-            <button data-filter="minimal">Minimal</button>
-          </div>
-        </div>
+      <p>Starting his artistic journey in 2022, he explored photography, motion graphics and modern web design — developing a distinct frame style that blends calm realism with film-inspired mood.</p>
 
-        <!-- masonry gallery -->
-        <section id="my-work" class="masonry" aria-live="polite"></section>
+      <p>He founded <strong>Alokchitra</strong>, a creative community where young artists collaborate, learn and explore visual storytelling through meets, workshops and experiments.</p>
 
-        <!-- contact quick -->
-        <section class="contact" id="contact">
-          <h3 style="margin-top:0">Contact</h3>
-          <p style="color:var(--muted)">For bookings, DM on Instagram or email: <strong>sofiullahahammed6@gmail.com</strong>. Share shoot type, date, location, mood refs and budget for fastest replies.</p>
+      <div class="social-grid">
+        <a class="social-item" href="https://www.facebook.com/SofiullahAahmmad">📘 Facebook</a>
+        <a class="social-item" href="https://www.instagram.com/sofiullahahammad/">📸 Instagram</a>
+        <a class="social-item" href="https://www.linkedin.com/in/sofiullah-ahammad/">💼 LinkedIn</a>
+        <a class="social-item" href="https://www.imdb.com/name/nm
 
-          <form id="contactForm" onsubmit="return false" style="margin-top:12px">
-            <label for="cname">Name</label>
-            <input id="cname" placeholder="Your name" required>
-            <label for="cemail" style="margin-top:8px">Email</label>
-            <input id="cemail" type="email" placeholder="you@domain.com" required>
-            <label for="cmsg" style="margin-top:8px">Message</label>
-            <textarea id="cmsg" placeholder="Shoot type, date, location, refs, budget" required></textarea>
-            <button class="send" id="sendBtn">Prepare Message</button>
-            <div id="note" style="color:var(--muted);margin-top:8px;font-size:13px">This is a front-end demo form — it copies your message so you can paste into email/DM.</div>
-          </form>
-        </section>
-      </div>
-
-      <!-- right: profile card & badges -->
-      <aside>
-        <div class="profile-card">
-          <img alt="profile" src="https://github.com/Atik119120/Sofiullah-Ahmmad/blob/main/537405745_1227380375810727_5014246075421698846_n.jpg?raw=true">
-          <div class="role">Photographer · Cinematographer</div>
-          <div style="margin-top:12px;color:var(--muted);font-size:13px">IMDb-listed · Founder of Alokchitra</div>
-
-          <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
-            <a href="https://www.instagram.com/sofiullahahammad/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/SofiullahAahmmad" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/in/sofiullah-ahammad/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/@sofiullahahammad" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-        </div>
-
-        <div style="margin-top:18px;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,.03);background:rgba(255,255,255,.01);text-align:center">
-          <div style="font-size:12px;color:var(--muted)">Based in</div>
-          <div style="font-weight:700;margin-top:6px">Rajshahi, Bangladesh</div>
-        </div>
-      </aside>
-    </div>
-
-    <footer>
-      <div>© <strong>SOFIULLAH AHAMMAD</strong> — Crafted frames in black-classic cinematic tone.</div>
-      <div style="margin-top:8px;color:var(--muted)">Link this site from Instagram / LinkedIn / IMDB to strengthen Knowledge Panel signals.</div>
-    </footer>
-  </main>
-
-  <!-- Lightbox -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-
-  <script>
-    /* HERO SLIDES */
-    (function heroSlides(){
-      const slides = document.querySelectorAll('.hero .slide');
-      let i = 0;
-      if(!slides.length) return;
-      slides[i].classList.add('active');
-      setInterval(()=> {
-        slides[i].classList.remove('active');
-        i = (i + 1) % slides.length;
-        slides[i].classList.add('active');
-      }, 4800);
-    })();
-
-    /* GALLERY DATA (original images retained) */
-    const IMAGES = [
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/516504411_122181081686294930_1354981258063084187_n.jpg",cat:"portrait"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/518272283_122182492982294930_2050981051542680339_n.jpg",cat:"portrait"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/517380497_122181225188294930_6246429145065925781_n.jpg",cat:"portrait"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/515917675_122180909330294930_6412642543653442749_n-1.jpg",cat:"portrait"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/515701029_122180606312294930_8531120020715119637_n.jpg",cat:"portrait"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/515676202_122180304962294930_200632359381297375_n.jpg",cat:"street"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/514766079_122180165198294930_8087572383171174875_n.jpg",cat:"street"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/506184247_1172079804674118_8297082392923591569_n.jpg",cat:"street"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/503981971_1166300098585422_716463166059436761_n.jpg",cat:"street"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/500526478_1159899559225476_4782436403389033571_n.jpg",cat:"street"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/499537030_1156436692905096_7357879002752437011_n.jpg",cat:"nature"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/495317506_1146991660516266_7007725301452082841_n.jpg",cat:"nature"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/494692885_1141353357746763_4191064276890114527_n.jpg",cat:"nature"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/492520125_1136970458185053_6091905134789172071_n.jpg",cat:"nature"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/491916284_1136970561518376_4560275798384185514_n.jpg",cat:"nature"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/492353076_1136970658185033_9081283128460695406_n.jpg",cat:"landscape"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/492328431_1136970704851695_1155705116767128978_n.jpg",cat:"landscape"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/492075621_1136970791518353_4554308702049214202_n.jpg",cat:"landscape"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/490756596_658425630273720_795771204020262550_n.jpg",cat:"landscape"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/487288972_644543378328612_1170698627005025773_n.jpg",cat:"landscape"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/481082450_1094377119111054_6711191303065219649_n.jpg",cat:"product"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/481193322_1093793455836087_603853839129532540_n.jpg",cat:"product"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/481073688_1093793115836121_8496777188296230825_n.jpg",cat:"product"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/480685281_1093276419221124_3994499737615266866_n.jpg",cat:"product"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/481461411_1093265772555522_8378009925105348914_n.jpg",cat:"product"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/481170693_1093265365888896_1190226031263237488_n.jpg",cat:"minimal"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/487292846_644542258328724_4577369689483170275_n.jpg",cat:"minimal"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/571150340_1277789244103173_1276861867954818685_n.jpg",cat:"minimal"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/558878836_1261260919089339_5749930142615789569_n.jpg",cat:"minimal"},
-      {url:"https://atikahmed.online/wp-content/uploads/2025/11/558892189_1261261162422648_5340520421271733303_n.jpg",cat:"minimal"}
-    ];
-
-    const gallery = document.getElementById('my-work');
-    const filters = document.querySelectorAll('.filters button');
-
-    function renderGallery(filter = 'all'){
-      gallery.innerHTML = '';
-      IMAGES.forEach((it, idx) => {
-        if(filter !== 'all' && it.cat !== filter) return;
-        const fig = document.createElement('figure');
-        fig.className = 'card';
-        fig.innerHTML = `
-          <a href="${it.url}" data-lightbox="sofi" data-title="${it.cat}">
-            <img loading="lazy" src="${it.url}" alt="${it.cat}">
-          </a>
-          <div class="meta"><div class="tag">${it.cat}</div><div style="opacity:.8;font-size:12px">Image ${idx+1}</div></div>
-        `;
-        gallery.appendChild(fig);
-        setTimeout(()=> fig.classList.add('visible'), 80 + idx * 25);
-      });
-    }
-
-    // init gallery
-    renderGallery('all');
-
-    filters.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filters.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderGallery(btn.dataset.filter);
-        window.scrollTo({top:document.getElementById('my-work').offsetTop - 80, behavior:'smooth'});
-      });
-    });
-
-    // contact front-end copy
-    document.getElementById('sendBtn').addEventListener('click', ()=> {
-      const n = document.getElementById('cname').value.trim();
-      const e = document.getElementById('cemail').value.trim();
-      const m = document.getElementById('cmsg').value.trim();
-      if(!n || !e || !m){ alert('Fill name, email and message'); return; }
-      const text = `From: ${n} <${e}>\n\n${m}`;
-      navigator.clipboard?.writeText(text).then(()=> {
-        const note = document.getElementById('note');
-        note.innerText = 'Message copied to clipboard. Paste into email or Instagram DM to send.';
-        note.style.color = 'lightgreen';
-      }).catch(()=> alert('Message copied to clipboard failed — please copy manually.'));
-    });
-  </script>
-</body>
-</html>
 
 
 
