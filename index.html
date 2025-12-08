@@ -1,255 +1,441 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sofiullah Ahammad — Cinematic Visual Artist</title>
-  <meta name="description" content="Official website of Sofiullah Ahammad — Bangladeshi photographer, cinematographer and visual artist creating black‑classic cinematic frames." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Atik — Portfolio (Final)</title>
+<meta name="description" content="Atik (Sofiullah Aahmmad) — Cinematic photographer.">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<!-- Fonts & Lightbox -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
 
-  <style>
-    :root {
-      --ink:#0f0f0f;
-      --muted:#666;
-      --warm:#f5f1e9;
-      --glass-bg:rgba(255,255,255,0.46);
-      --glass-border:rgba(0,0,0,0.05);
-      --max:1180px;
-    }
+<style>
+:root{
+  --max:1180px;
+  --accent:#ff7b00;
+  --muted:#6b6b6b;
+  --bg:#fff;
+  --ink:#111;
+}
 
-    * {margin:0;padding:0;box-sizing:border-box;}
-    body {
-      font-family:"Inter", sans-serif;
-      background:#ffffff;
-      color:var(--ink);
-      overflow-x:hidden;
-      -webkit-font-smoothing:antialiased;
-    }
+/* Reset + base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+  background:var(--bg);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
 
-    /* ================= NAVBAR ================= */
-    header {
-      position:fixed;
-      top:22px;
-      left:50%;
-      transform:translateX(-50%);
-      width:calc(var(--max) + 60px);
-      z-index:1000;
-    }
-    .nav {
-      background:var(--glass-bg);
-      backdrop-filter:blur(14px);
-      border-radius:14px;
-      border:1px solid var(--glass-border);
-      padding:14px 26px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      box-shadow:0 8px 30px rgba(0,0,0,0.06);
-    }
-    .nav-logo {
-      width:52px;
-      height:52px;
-    }
-    .nav-logo img {
-      width:100%;height:100%;object-fit:contain;
-    }
-    .nav-links a {
-      margin-left:26px;
-      font-size:15px;
-      text-decoration:none;
-      color:var(--muted);
-      letter-spacing:0.08em;
-    }
-    .nav-links a:hover {color:var(--ink);} 
+/* ---------------- HEADER ---------------- */
+header{
+  position:fixed;top:0;left:0;right:0;height:78px;
+  background:rgba(255,255,255,0.55);
+  backdrop-filter:blur(0px);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  transition:0.35s ease;
+  z-index:1500;
+  display:flex;align-items:center;justify-content:center;
+}
+header.scrolled{
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(14px);
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+.nav{
+  width:calc(var(--max) + 80px);
+  display:flex;align-items:center;justify-content:space-between;padding:12px 22px;
+}
 
-    /* ================= HERO ================= */
-    .hero {
-      height:100vh;
-      width:100%;
-      max-width:var(--max);
-      margin:0 auto;
-      border-radius:16px;
-      margin-top:120px;
-      overflow:hidden;
-      position:relative;
-      background:url('https://github.com/Atik119120/Sofiullah-Ahammad/blob/main/Picsart_25-12-06_21-37-47-797.jpg?raw=true') center/cover no-repeat;
-    }
-    .fade {
-      position:absolute;
-      inset:0;
-      background:linear-gradient(
-        to bottom,
-        rgba(255,255,255,0) 25%,
-        rgba(255,255,255,0.6) 70%,
-        rgba(255,255,255,1) 100%
-      );
-    }
-    .hero-content {
-      position:absolute;
-      bottom:120px;
-      left:50%;
-      transform:translateX(-50%);
-      text-align:center;
-      z-index:10;
-    }
-    .hero-content h1 {
-      font-family:"Playfair Display", serif;
-      font-size:48px;
-      letter-spacing:0.22em;
-    }
-    .hero-content p {
-      color:var(--muted);
-      letter-spacing:0.18em;
-      margin-top:8px;
-    }
+/* nav groups */
+.left-links,.right-links{display:flex;gap:22px;align-items:center}
+.left-links a,.right-links a{
+  font-weight:700;color:var(--accent);padding:8px 12px;border-radius:12px;transition:.2s;
+}
+.left-links a:hover,.right-links a:hover{
+  background:rgba(255,123,0,0.12);color:#000;
+}
 
-    /* PAGE SECTIONS – Page-like blocks */
-    section.page-block {
-      width:100%;
-      max-width:var(--max);
-      margin:0 auto;
-      padding:120px 20px;
-      min-height:100vh;
-      position:relative;
-    }
-    .page-block.fade-enter {
-      opacity:0;
-      transform:translateY(60px);
-      transition:0.8s ease;
-    }
-    .page-block.visible {
-      opacity:1;
-      transform:none;
-    }
+/* center logo */
+.logo-center{display:flex;align-items:center;gap:12px}
+.logo-center img{height:46px;display:block;border-radius:10px}
+.logo-center .brand{
+  font-family:'Playfair Display',serif;font-size:18px;letter-spacing:.12em;font-weight:700;margin-left:8px;
+}
 
-    /* ABOUT PAGE */
-    .about-wrap {
-      display:flex;
-      flex-wrap:wrap;
-      gap:40px;
-      align-items:flex-start;
-    }
-    .pfp {
-      width:300px;
-      border-radius:20px;
-      overflow:hidden;
-      border:1px solid var(--glass-border);
-    }
-    .pfp img {width:100%;display:block;}
-    .about-text {flex:1;font-size:17px;line-height:1.75;}
-    .about-text p {margin-bottom:20px;}
+/* header active */
+header a.active{background:rgba(255,123,0,0.18);color:#000}
 
-    /* SOCIAL ICON BLOCK */
-    .social-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-      gap:14px;
-      margin-top:20px;
-    }
-    .social-item {
-      text-decoration:none;
-      padding:12px 14px;
-      background:white;
-      border-radius:14px;
-      border:1px solid rgba(0,0,0,0.08);
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-size:15px;
-      color:var(--ink);
-    }
-    .social-item:hover {border-color:var(--ink);} 
+/* ---------------- MAIN / HERO ---------------- */
+main{margin-top:90px}
+.hero{
+  min-height:72vh;display:flex;align-items:flex-end;justify-content:center;position:relative;padding:56px 24px 120px;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('https://github.com/Atik119120/Sofiullah-Ahammad/blob/main/Picsart_25-12-06_21-37-47-797.jpg?raw=true');
+  background-size:cover;background-position:center;filter:contrast(.92) saturate(.9);z-index:-2;
+}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(to top,#fff,transparent);z-index:-1}
+.hero-inner{text-align:center;max-width:960px}
+.hero-inner h1{font-family:'Playfair Display',serif;font-size:48px;letter-spacing:.14em}
+.role{color:var(--muted);font-weight:600;margin-top:8px}
+.lead{color:var(--muted);margin-top:12px;line-height:1.7;max-width:820px;margin-left:auto;margin-right:auto}
 
-    /* WORK (GALLERY) */
-    .gallery {
-      column-count:3;
-      column-gap:20px;
-    }
-    @media(max-width:900px){.gallery{column-count:2;}}
-    @media(max-width:600px){.gallery{column-count:1;}}
+/* ---------------- SECTION TITLE ---------------- */
+.section{max-width:var(--max);margin:100px auto;padding:0 20px}
+.section .title{font-family:'Playfair Display',serif;font-size:22px;text-align:center;margin-bottom:6px}
+.underline{width:70px;height:4px;background:var(--accent);margin:12px auto 30px;border-radius:8px}
 
-    .gallery a {display:block;margin-bottom:20px;break-inside:avoid;}
-    .gallery img {
-      width:100%;
-      border-radius:14px;
-      border:1px solid rgba(0,0,0,0.06);
-      transition:0.35s;
-    }
-    .gallery img:hover {transform:scale(1.03);} 
+/* ---------------- ABOUT (final) ---------------- */
+#about{max-width:var(--max);margin:80px auto;padding:0 20px}
+.about-flex{display:flex;gap:36px;flex-wrap:wrap;justify-content:center;align-items:flex-start}
 
-    /* CONTACT PAGE */
-    .contact-info {
-      font-size:18px;
-      margin-top:10px;
-      line-height:1.7;
-    }
+/* profile card */
+.profile-card{width:320px;background:#fff;padding:22px;border-radius:20px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 8px 28px rgba(0,0,0,0.06)}
+.profile-label{font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.14em;text-align:center;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid rgba(255,123,0,0.22)}
+.profile-img{width:100%;height:320px;border-radius:14px;overflow:hidden;background:#eee}
+.profile-img img{width:100%;height:100%;object-fit:cover;display:block}
+.profile-name{font-size:20px;font-weight:700;text-align:center;margin-top:14px}
+.profile-title{text-align:center;color:var(--accent);font-weight:700;margin-top:6px;font-size:13px}
+.profile-btn{display:block;width:fit-content;margin:14px auto 0;padding:10px 16px;background:var(--accent);color:#fff;border-radius:12px;font-weight:800;box-shadow:0 8px 22px rgba(255,123,0,0.28)}
 
-    /* FOOTER */
-    footer {
-      margin-top:120px;
-      padding:60px 30px;
-      background:var(--warm);
-      border-radius:20px;
-      text-align:center;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    }
-    footer img {width:70px;margin-bottom:10px;}
-    footer h3 {
-      font-family:"Playfair Display", serif;
-      font-size:22px;
-      letter-spacing:0.14em;
-      margin-bottom:14px;
-    }
-    footer p {color:#444;margin-top:10px;font-size:14px;}
-  </style>
+/* bio card */
+.bio-card{flex:1;min-width:320px;max-width:720px;background:#fff;padding:26px;border-radius:20px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 8px 28px rgba(0,0,0,0.06)}
+.bio-card p{font-size:15.5px;color:#333;line-height:1.75;margin-bottom:14px}
+.social-title{color:var(--accent);font-weight:800;margin-top:10px;letter-spacing:.04em}
+.social-row{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+.social-row a{width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:.22s}
+.social-row a:hover{transform:translateY(-6px);box-shadow:0 10px 28px rgba(0,0,0,0.12)}
+
+/* ---------------- WORK ---------------- */
+#work{max-width:var(--max);margin:80px auto;padding:0 20px}
+.work-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.filter-btn{padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.08);background:#fff;cursor:pointer;font-weight:700;color:#666}
+.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.gallery{column-count:3;column-gap:18px}
+@media(max-width:980px){.gallery{column-count:2}}
+@media(max-width:640px){.gallery{column-count:1}}
+.gallery a{display:block;margin-bottom:18px;break-inside:avoid-column;border-radius:12px;overflow:hidden}
+.gallery img{width:100%;height:auto;display:block;transition:transform .35s}
+.gallery img:hover{transform:scale(1.03)}
+
+/* ---------------- CONTACT ---------------- */
+#contact{max-width:var(--max);margin:100px auto;padding:0 20px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.contact-card,.form-card{background:rgba(255,255,255,0.6);backdrop-filter:blur(8px);border-radius:18px;padding:28px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 12px 28px rgba(0,0,0,0.08)}
+.contact-card h3{font-size:22px;font-weight:700}
+.contact-card p{color:#444;line-height:1.7;margin-top:10px}
+.contact-social{display:flex;gap:12px;margin-top:14px}
+.contact-social a{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;transition:.2s}
+.contact-social a:hover{transform:translateY(-6px)}
+.meeting-btn{display:inline-block;margin-top:18px;padding:12px 18px;background:var(--accent);color:#fff;border-radius:12px;font-weight:800;box-shadow:0 10px 28px rgba(255,123,0,0.28)}
+
+/* ---------------- FOOTER ---------------- */
+footer{padding:50px 20px;background:#f2f2f4}
+.footer-box{max-width:var(--max);margin:0 auto;background:linear-gradient(180deg,#fff,#eee);padding:28px;border-radius:20px;border:1px solid rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.footer-brand{font-size:32px;font-weight:900;color:var(--accent);letter-spacing:-1px}
+.footer-social{display:flex;gap:12px;align-items:center}
+.footer-social a{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+
+/* small screens */
+@media(max-width:720px){
+  .nav{padding:10px}
+  .hero-inner h1{font-size:36px}
+  .profile-card{width:100%}
+  .bio-card{width:100%}
+  .footer-box{flex-direction:column;align-items:flex-start}
+}
+</style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <div class="nav">
-    <div class="nav-logo">
-      <img src="https://atikahmed.online/wp-content/uploads/2025/10/atix-logo-scaled-e1762443078127.png" />
-    </div>
-    <nav class="nav-links">
-      <a href="#hero">Home</a>
-      <a href="#about">Bio</a>
+<!-- ========== HEADER ========== -->
+<header id="mainHeader" role="banner">
+  <div class="nav" role="navigation" aria-label="Main nav">
+
+    <!-- LEFT -->
+    <nav class="left-links" aria-label="Left links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <!-- CENTER logo (image + text) -->
+    <a href="#home" class="logo-center" aria-label="Atik home">
+      <img src="https://github.com/Atik119120/Sofiullah-Ahammad/blob/main/Picsart_25-12-08_16-30-%20%20%2042-708.png?raw=true" alt="Atik logo">
+    
+    </a>
+
+    <!-- RIGHT -->
+    <nav class="right-links" aria-label="Right links">
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </div>
 </header>
 
-<!-- HERO -->
-<section id="hero" class="hero">
-  <div class="fade"></div>
-  <div class="hero-content">
-    <h1>SOFIULLAH AHAMMAD</h1>
-    <p>Cinematic Photographer & Visual Artist</p>
-  </div>
-</section>
+<main>
 
-<!-- ABOUT (Page 2 feel) -->
-<section id="about" class="page-block fade-enter">
-  <div class="about-wrap">
-    <div class="pfp">
-      <img src="https://raw.githubusercontent.com/Atik119120/Sofiullah-Ahammad/main/537405745_1227380375810727_5014246075421698846_n.jpg?raw=true" />
+  <!-- HERO -->
+  <section id="home" class="hero" aria-label="Home">
+    <div class="hero-bg" role="img" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1>SOFIULLAH AHAMMAD</h1>
+      <div class="role">Photographer · Cinematographer · Motion Designer</div>
+      <div class="lead">Bangladeshi visual artist shaping cinematic black-classic frames across portrait, street, minimal and product storytelling. Founder — Alokchitra.</div>
+    </div>
+  </section>
+
+ <!-- CONTACT -->
+  <section id="ABOUT" aria-label="ABOUT" class="section">
+    <div class="title">ABOUT</div>
+    <div class="underline"></div>
+
+
+    <div class="about-flex">
+      <!-- Profile Card -->
+      <div class="profile-card" role="region" aria-label="Profile card">
+        <div class="profile-label">PROFILE</div>
+        <div class="profile-img">
+          <img src="https://github.com/Atik119120/Sofiullah-Ahammad/blob/main/537405745_1227380375810727_5014246075421698846_n.jpg?raw=true" alt="Profile Photo">
+        </div>
+        <div class="profile-name">Sofiullah Ahammad</div>
+        <div class="profile-title">Photographer • Cinematographer • Motion Designer</div>
+        
+      </div>
+
+      <!-- Bio Card -->
+      <div class="bio-card" role="region" aria-label="Bio">
+        <p><strong>Sofiullah Ahammad</strong> is a Bangladeshi photographer, cinematographer and motion designer known for his <strong>cinematic black–classic visual style</strong>. His work blends emotional storytelling, minimal composition and controlled lighting — shaping visuals that feel atmospheric and modern.</p>
+
+        <p>Beginning his creative journey in 2022, he expanded into motion graphics and modern web design while shaping a film-inspired aesthetic. He also founded <strong>Alokchitra</strong>, a creative community helping young visual artists grow through workshops, photo meets and collaborative projects focused on visual storytelling and craft.</p>
+
+        <p>His portfolio spans portrait, minimal, street, product and landscape photography — unified by strong contrast, deep mood, and intentional cinematic framing.</p>
+
+        <div class="social-title">SOCIAL MEDIA PLATFORMS</div>
+        <div class="social-row" role="list" aria-label="Social platforms">
+          <a href="https://www.instagram.com/sofiullahahammad" target="_blank" role="listitem" aria-label="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="22" alt="IG"></a>
+          <a href="https://www.facebook.com/SofiullahAahmmad" target="_blank" role="listitem" aria-label="Facebook"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="22" alt="FB"></a>
+          <a href="https://www.linkedin.com/in/sofiullah-ahammad/" target="_blank" role="listitem" aria-label="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/2504/2504799.png" width="22" alt="LN"></a>
+          <a href="https://www.youtube.com/@sofiullahahammad" target="_blank" role="listitem" aria-label="YouTube"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="22" alt="YT"></a>
+          <a href="mailto:sofiullahahammed6@gmail.com" role="listitem" aria-label="Email"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="22" alt="Mail"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" aria-label="Work" class="section">
+    <div class="title">WORK</div>
+    <div class="underline"></div>
+
+    <div style="text-align:center;color:var(--muted);margin-bottom:12px">
+      Portrait • Street • Nature • Landscape • Product • Minimal
     </div>
 
-    <div class="about-text">
-      <p><strong>Sofiullah Ahammad</strong> (professionally known as <strong>Atik Ahmed</strong>) is a Bangladeshi photographer, cinematographer and visual artist known for his black‑classic cinematic language — shaped through contrast, intentional lighting and emotional minimalism.</p>
+    <div class="work-controls" role="toolbar" aria-label="Filter work">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="portrait">Portrait</button>
+      <button class="filter-btn" data-filter="street">Street</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="landscape">Landscape</button>
+      <button class="filter-btn" data-filter="product">Product</button>
+      <button class="filter-btn" data-filter="minimal">Minimal</button>
+    </div>
 
-      <p>Starting his artistic journey in 2022, he explored photography, motion graphics and modern web design — developing a distinct frame style that blends calm realism with film-inspired mood.</p>
+    <div class="gallery" id="gallery" aria-live="polite"></div>
+  </section>
 
-      <p>He founded <strong>Alokchitra</strong>, a creative community where young artists collaborate, learn and explore visual storytelling through meets, workshops and experiments.</p>
+  <!-- CONTACT -->
+  <section id="contact" aria-label="Contact" class="section">
+    <div class="title">CONTACT</div>
+    <div class="underline"></div>
 
-      <div class="social-grid">
-        <a class="social-item" href="https://www.facebook.com/SofiullahAahmmad">📘 Facebook</a>
-        <a class="social-item" href="https://www.instagram.com/sofiullahahammad/">📸 Instagram</a>
-        <a class="social-item" href="https://www.linkedin.com/in/sofiullah-ahammad/">💼 LinkedIn</a>
-        <a class="social-item" href="https://www.imdb.com/name/nm
+    <div class="contact-grid">
+
+      <!-- LEFT CARD -->
+      <div class="contact-card">
+        <h3>Let’s Work Together</h3>
+        <p>Available for portrait sessions, cinematic storytelling, brand visuals and creative collaborations. Quick replies guaranteed.</p>
+
+        <div style="margin-top:18px;">
+          <div style="font-size:13px;color:#666;">Email</div>
+          <div style="font-weight:700;margin-top:6px;">
+            <a href="mailto:sofiullahahammed6@gmail.com">sofiullahahammed6@gmail.com</a>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <div style="font-size:13px;color:#666;">Social</div>
+          <div class="contact-social" role="list">
+            <a href="https://www.instagram.com/sofiullahahammad" target="_blank" role="listitem"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="22" alt="IG"></a>
+            <a href="https://www.facebook.com/SofiullahAahmmad" target="_blank" role="listitem"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="22" alt="FB"></a>
+            <a href="https://www.linkedin.com/in/sofiullah-ahammad/" target="_blank" role="listitem"><img src="https://cdn-icons-png.flaticon.com/512/2504/2504799.png" width="22" alt="LN"></a>
+            <a href="https://www.youtube.com/@sofiullahahammad" target="_blank" role="listitem"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="22" alt="YT"></a>
+          </div>
+        </div>
+
+        <a class="meeting-btn" href="https://calendly.com" target="_blank">Book a Meeting →</a>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="form-card">
+        <h3 style="text-align:center;margin-bottom:12px">Send a Message</h3>
+
+        <form id="contactForm" onsubmit="return submitContact(event)" style="display:flex;flex-direction:column;gap:12px">
+          <input id="cname" type="text" placeholder="Your name" required style="padding:12px;border-radius:10px;border:1px solid #ddd;font-size:15px">
+          <input id="cemail" type="email" placeholder="you@example.com" required style="padding:12px;border-radius:10px;border:1px solid #ddd;font-size:15px">
+          <textarea id="cmessage" rows="5" required placeholder="Tell me about your shoot, ideas, date, location..." style="padding:12px;border-radius:10px;border:1px solid #ddd;font-size:15px"></textarea>
+          <button type="submit" style="padding:12px;background:var(--accent);color:#fff;border-radius:10px;border:none;font-weight:800">Send Message →</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-box" role="contentinfo">
+
+    <!-- LEFT BRAND -->
+    <div style="display:flex;align-items:center;gap:14px">
+      
+      <div>
+        <div style="font-size:16px;font-weight:700;color:#111">SOFIULLAH AHAMMAD</div>
+        <div style="font-size:13px;color:#666">Photography • Cinematic • Web • Motion</div>
+      </div>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-social" aria-label="Footer Social">
+      <a href="https://www.facebook.com/SofiullahAahmmad"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="18" alt="FB"></a>
+      <a href="https://www.instagram.com/sofiullahahammad"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="18" alt="IG"></a>
+      <a href="https://www.linkedin.com/in/sofiullah-ahammad/"><img src="https://cdn-icons-png.flaticon.com/512/2504/2504903.png" width="18" alt="LN"></a>
+      <a href="https://www.youtube.com/@sofiullahahammad"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="18" alt="YT"></a>
+    </div>
+
+    <!-- EMAIL PILL -->
+    <div style="padding:10px 16px;border-radius:12px;background:#fff;border:2px solid rgba(255,123,0,0.28);font-weight:700;color:#111;box-shadow:0 6px 18px rgba(255,123,0,0.12)">
+      sofiullahahammed6@gmail
+    </div>
+
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+<script>
+/* ========== HEADER SCROLL BLUR ========== */
+window.addEventListener('scroll', () => {
+  const h = document.getElementById('mainHeader');
+  if (window.scrollY > 12) h.classList.add('scrolled');
+  else h.classList.remove('scrolled');
+});
+
+/* ========== GALLERY DATA + RENDER ========== */
+const IMAGES = [
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/516504411_122181081686294930_1354981258063084187_n.jpg", cat:"portrait"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/518272283_122182492982294930_2050981051542680339_n.jpg", cat:"portrait"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/517380497_122181225188294930_6246429145065925781_n.jpg", cat:"portrait"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/515917675_122180909330294930_6412642543653442749_n-1.jpg", cat:"portrait"},
+
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/515701029_122180606312294930_8531120020715119637_n.jpg", cat:"product"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/481082450_1094377119111054_6711191303065219649_n.jpg", cat:"product"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/481193322_1093793455836087_603853839129532540_n.jpg", cat:"product"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/481073688_1093793115836121_8496777188296230825_n.jpg", cat:"product"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/480685281_1093276419221124_3994499737615266866_n.jpg", cat:"product"},
+
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/515676202_122180304962294930_200632359381297375_n.jpg", cat:"street"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/514766079_122180165198294930_8087572383171174875_n.jpg", cat:"street"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/506184247_1172079804674118_8297082392923591569_n.jpg", cat:"street"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/503981971_1166300098585422_716463166059436761_n.jpg", cat:"street"},
+
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/500526478_1159899559225476_4782436403389033571_n.jpg", cat:"landscape"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/487288972_644543378328612_1170698627005025773_n.jpg", cat:"landscape"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/492328431_1136970704851695_1155705116767128978_n.jpg", cat:"landscape"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/492075621_1136970791518353_4554308702049214202_n.jpg", cat:"landscape"},
+
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/499537030_1156436692905096_7357879002752437011_n.jpg", cat:"nature"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/495317506_1146991660516266_7007725301452082841_n.jpg", cat:"nature"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/494692885_1141353357746763_4191064276890114527_n.jpg", cat:"nature"},
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/492520125_1136970458185053_6091905134789172071_n.jpg", cat:"nature"},
+
+  {url:"https://atikahmed.online/wp-content/uploads/2025/11/481170693_1093265365888896_1190226031263237488_n.jpg", cat:"minimal"}
+];
+
+const gallery = document.getElementById('gallery');
+function renderGallery(filter='all'){
+  gallery.innerHTML = '';
+  const list = IMAGES.filter(i => filter === 'all' ? true : i.cat === filter);
+  list.forEach(item => {
+    const a = document.createElement('a');
+    a.href = item.url;
+    a.setAttribute('data-lightbox','portfolio');
+    a.setAttribute('data-title', item.cat);
+    const img = document.createElement('img');
+    img.src = item.url;
+    img.alt = item.cat;
+    img.loading = 'lazy';
+    a.appendChild(img);
+    gallery.appendChild(a);
+  });
+}
+renderGallery();
+
+/* filter buttons */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderGallery(btn.getAttribute('data-filter'));
+  });
+});
+
+/* contact form: open mail client */
+function submitContact(e){
+  e.preventDefault();
+  const name = document.getElementById('cname').value.trim();
+  const email = document.getElementById('cemail').value.trim();
+  const message = document.getElementById('cmessage').value.trim();
+  const subject = encodeURIComponent('Website contact from ' + (name || '—'));
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+  window.location.href = `mailto:sofiullahahammed6@gmail.com?subject=${subject}&body=${body}`;
+  return false;
+}
+
+/* active nav on scroll */
+const navLinks = document.querySelectorAll('header a');
+const sections = Array.from(['home','about','work','contact']).map(id => document.getElementById(id));
+window.addEventListener('scroll', () => {
+  const top = window.scrollY + 140;
+  for (let i = sections.length - 1; i >= 0; i--) {
+    const s = sections[i];
+    if (!s) continue;
+    if (top >= s.offsetTop) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const match = document.querySelector(`header a[href="#${s.id}"]`);
+      if (match) match.classList.add('active');
+      break;
+    }
+  }
+});
+
+/* lightbox safe options */
+if (window.lightbox) lightbox.option({resizeDuration:200,wrapAround:true,fadeDuration:200});
+</script>
+</body>
+</html>
+
 
 
 
