@@ -159,53 +159,71 @@ footer{padding:50px 20px;background:#f2f2f4}
 </style>
 </head>
 <body>
-=<!-- PREMIUM PRELOADER (2 SEC + LOGO PULSE ANIMATION) -->
-<div id="preloader">
+<!-- UNIQUE SIGNATURE REVEAL LOADER -->
+<div id="unique-loader">
   <img src="https://github.com/Atik119120/Sofiullah-Ahammad/blob/main/Picsart_25-12-08_16-30-%20%20%2042-708.png?raw=true">
 </div>
 
 <style>
-  /* Fullscreen Preloader */
-  #preloader {
+  /* Centered, minimal preloader */
+  #unique-loader {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 999999;
-    opacity: 1;
-    transition: opacity 0.6s ease;
+    pointer-events: none;
+    animation: hideLoader 0.6s ease forwards;
+    animation-delay: 2.2s; /* must stay visible for at least 2 sec */
   }
 
-  /* LOGO Pulse Animation */
-  .loader-logo {
-    width: 100px;
-    height: 100px;
+  /* Unique cinematic animation */
+  .unique-logo {
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    animation: pulse 1.5s ease-in-out infinite;
+    opacity: 0;
+    animation: reveal 2s ease forwards;
   }
 
-  @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.85; }
-    50% { transform: scale(1.15); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.85; }
+  /* Reveal effect animation */
+  @keyframes reveal {
+    0% { 
+      opacity: 0;
+      transform: scale(0.4);
+      filter: blur(8px);
+    }
+    40% {
+      opacity: 1;
+      transform: scale(1.1);
+      filter: blur(0px);
+    }
+    70% {
+      transform: scale(1);
+      filter: brightness(1.2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: brightness(1);
+    }
+  }
+
+  /* Fade out */
+  @keyframes hideLoader {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 </style>
 
 <script>
-  // Minimum 2 second preload
-  window.addEventListener("load", function () {
-    setTimeout(() => {
-      const loader = document.getElementById("preloader");
-      loader.style.opacity = "0";
-      setTimeout(() => loader.style.display = "none", 600);
-    }, 2000); // 2 seconds
-  });
+  setTimeout(() => {
+    document.getElementById("unique-loader").style.display = "none";
+  }, 2600);
 </script>
+
 
 
 
