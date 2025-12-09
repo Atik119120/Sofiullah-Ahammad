@@ -159,13 +159,13 @@ footer{padding:50px 20px;background:#f2f2f4}
 </style>
 </head>
 <body>
-<!-- PRELOADER (LOGO VERSION: HTML + CSS + JS ONE PACK) -->
+=<!-- PREMIUM PRELOADER (2 SEC + LOGO PULSE ANIMATION) -->
 <div id="preloader">
   <img src="https://github.com/Atik119120/Sofiullah-Ahammad/blob/main/Picsart_25-12-08_16-30-%20%20%2042-708.png?raw=true">
 </div>
 
 <style>
-  /* PRELOADER BACKGROUND */
+  /* Fullscreen Preloader */
   #preloader {
     position: fixed;
     width: 100%;
@@ -177,30 +177,36 @@ footer{padding:50px 20px;background:#f2f2f4}
     align-items: center;
     justify-content: center;
     z-index: 999999;
-    transition: opacity 0.4s ease;
+    opacity: 1;
+    transition: opacity 0.6s ease;
   }
 
-  /* LOGO ANIMATION */
+  /* LOGO Pulse Animation */
   .loader-logo {
-    width: 85px;          /* logo size */
-    height: 85px;
-    border-radius: 50%;   /* logo গোল করতে চাইলে */
-    animation: spin 1.2s linear infinite;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
   }
 
-  /* SPIN EFFECT */
-  @keyframes spin {
-    to { transform: rotate(360deg); }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.85; }
+    50% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.85; }
   }
 </style>
 
 <script>
+  // Minimum 2 second preload
   window.addEventListener("load", function () {
-    const loader = document.getElementById("preloader");
-    loader.style.opacity = "0";
-    setTimeout(() => loader.style.display = "none", 400);
+    setTimeout(() => {
+      const loader = document.getElementById("preloader");
+      loader.style.opacity = "0";
+      setTimeout(() => loader.style.display = "none", 600);
+    }, 2000); // 2 seconds
   });
 </script>
+
 
 
 <!-- ========== HEADER ========== -->
